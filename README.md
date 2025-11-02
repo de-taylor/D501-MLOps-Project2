@@ -1,3 +1,9 @@
+# D501 PA Task 2: MLOps pipeline deployment with FastAPI
+
+This is the final project for the WGU course D501, submitted on Udacity. The edits are my own and are intended only for my own submission for grading. Any unauthorized use of my edits is explicitly forbidden and violates WGU's Academic Integrity policy.
+
+## Project Instructions
+
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
 # Environment Set up (pip or conda)

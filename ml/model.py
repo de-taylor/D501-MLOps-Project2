@@ -1,10 +1,18 @@
 import pickle
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.metrics import fbeta_score, precision_score, recall_score, make_scorer
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import GridSearchCV
+import numpy as np
 from ml.data import process_data
 # TODO: add necessary import
 
+
+
 # Optional: implement hyperparameter tuning.
-def train_model(X_train, y_train):
+def get_best_model(parameters):
+
+
+def train_model(X_train: np.array, y_train: np.array) -> RandomForestRegressor:
     """
     Trains a machine learning model and returns it.
 
@@ -19,8 +27,7 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    # TODO: implement the function
-    pass
+    
 
 
 def compute_model_metrics(y, preds):

@@ -18,9 +18,9 @@ Working in a command line environment is recommended for ease of use with git an
     - [x] Make sure you set up the GitHub Action to have the same version of Python as you used in development.
 
 ### Data
-- [ ] Download census.csv and commit it to dvc.
-- [ ] This data is messy, try to open it in pandas and see what you get.
-- [ ] To clean it, use your favorite text editor to remove all spaces.
+- [x] Download census.csv and commit it to dvc.
+- [x] This data is messy, try to open it in pandas and see what you get.
+- [x] To clean it, use your favorite text editor to remove all spaces.
 
 ### Model
 - [ ] Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.

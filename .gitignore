@@ -3,7 +3,6 @@
 
 ### DVC - ignoring data files ###
 data/census.csv
-model/*
 
 ### VSCode ###
 .vscode/

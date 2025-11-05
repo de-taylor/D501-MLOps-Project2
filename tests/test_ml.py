@@ -1,4 +1,5 @@
-import os, pytest, tempfile
+import json, os, pytest, tempfile
+from fastapi.testclient import TestClient
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -7,6 +8,7 @@ from sklearn.utils.validation import check_is_fitted, column_or_1d
 from sklearn.linear_model import LogisticRegression
 
 # local imports
+from main import app
 from ml.data import process_data
 from ml.model import train_model, save_model
 
@@ -60,6 +62,30 @@ def trained_components(split_data, cat_features):
         "X_train": X_train,
         "y_train": y_train
     }
+
+@pytest.fixture(scope="function")
+def api_client():
+    return TestClient(app)
+
+@pytest.fixture(scope="function")
+def api_data():
+    return {
+        "age": 37,
+        "workclass": "Private",
+        "fnlgt": 178356,
+        "education": "HS-grad",
+        "education-num": 10,
+        "marital-status": "Married-civ-spouse",
+        "occupation": "Prof-specialty",
+        "relationship": "Husband",
+        "race": "White",
+        "sex": "Male",
+        "capital-gain": 0,
+        "capital-loss": 0,
+        "hours-per-week": 40,
+        "native-country": "United-States",
+    }
+
 
 # testing the data itself, basic deterministic/descriptive tests
 # Test Suite:
@@ -345,3 +371,18 @@ def test_save_model(trained_components):
         # test that files exist and are binary files
         assert os.path.exists(os.path.join(tmpdirpath, "enc.pkl"))
         assert os.path.exists(os.path.join(tmpdirpath, "lb.pkl"))
+
+
+# testing the FastAPI endpoints
+def test_api_get_root(api_client):
+    resp = api_client.get("/")
+    
+    assert resp.status_code == 200
+    assert resp.json()["message"] == "Welcome to the Census Income Classifier API!"
+
+def test_api_post_data(api_client, api_data):
+    dumped_data = json.dumps(api_data)
+    resp = api_client.post("/data/", data=dumped_data)
+
+    assert resp.status_code == 200
+    assert resp.json()["result"] in [">50K", "<=50K"]

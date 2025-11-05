@@ -5,7 +5,7 @@ This is the final project for the WGU course D501, submitted on Udacity. The edi
 ## Links
 
 - GitHub Repository - [de-taylor/D501-MLOps-Project2](https://github.com/de-taylor/D501-MLOps-Project2)
-- Heroku App - [D501-Heroku-Test](https://d501-heroku-test-35f2d874348f.herokuapp.com/)
+- Heroku App - [D501-Census-Inference](https://d501-census-inference-9de032ed4bb3.herokuapp.com/)
 
 ## Model Card
 

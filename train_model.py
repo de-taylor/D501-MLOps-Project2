@@ -64,15 +64,6 @@ parameters = {
     'max_iter': [500, 750, 1000]
 }
 
-# post-tuning, known best parameters
-# parameters = {
-#     'C': [1.27],
-#     'max_iter': [500],
-#     'solver': ['lbfgs'],
-#     'penalty': ['l2'],
-#     'tol': [0.0001]
-# }
-
 model = train_model(
     X_train=X_train,
     y_train=y_train,
@@ -158,4 +149,4 @@ baseline_accuracy = accuracy_score(y_test, y_pred_baseline)
 actual_accuracy = accuracy_score(y_test, preds)
 
 print(f"Baseline Accuracy: {baseline_accuracy}")
-print(f"Experimental Accuracy: {actual_accuracy}")
+print(f"Model Accuracy: {actual_accuracy}")

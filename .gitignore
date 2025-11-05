@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
 ### DVC - ignoring data files ###
-data/census.csv
+# data/census.csv DVC is not working and this is a small file
 
 ### VSCode ###
 .vscode/

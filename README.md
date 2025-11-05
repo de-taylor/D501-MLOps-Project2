@@ -2,9 +2,11 @@
 
 This is the final project for the WGU course D501, submitted on Udacity. The edits are my own and are intended only for my own submission for grading. Any unauthorized use of my edits is explicitly forbidden and violates WGU's Academic Integrity policy.
 
-## Project Instructions
+## Model Card
 
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
+To learn more about this LogisticRegression model, please review the [Model Card](https://github.com/de-taylor/D501-MLOps-Project2/blob/main/model_card_LogReg.md)
+
+## Project Instructions
 
 ### Environment Set up (pip or conda)
 - [ ] Option 1: use the supplied file `environment.yml` to create a new environment with conda
@@ -30,6 +32,7 @@ Working in a command line environment is recommended for ease of use with git an
 - [x] Write a model card using the provided template.
 
 ### API Creation
-- [ ]  Create a RESTful API using FastAPI this must implement:
-    - [ ] GET on the root giving a welcome message.
-    - [ ] POST that does model inference.
+- [x]  Create a RESTful API using FastAPI this must implement:
+    - [x] GET on the root giving a welcome message.
+    - [x] POST that does model inference.
+- [x] Deployed to Heroku

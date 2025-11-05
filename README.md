@@ -2,6 +2,11 @@
 
 This is the final project for the WGU course D501, submitted on Udacity. The edits are my own and are intended only for my own submission for grading. Any unauthorized use of my edits is explicitly forbidden and violates WGU's Academic Integrity policy.
 
+## Links
+
+- GitHub Repository - [de-taylor/D501-MLOps-Project2](https://github.com/de-taylor/D501-MLOps-Project2)
+- Heroku App - [D501-Heroku-Test](https://d501-heroku-test-35f2d874348f.herokuapp.com/)
+
 ## Model Card
 
 To learn more about this LogisticRegression model, please review the [Model Card](https://github.com/de-taylor/D501-MLOps-Project2/blob/main/model_card_LogReg.md)

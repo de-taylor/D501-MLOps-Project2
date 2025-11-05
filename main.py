@@ -9,28 +9,31 @@ from ml.model import inference, load_model
 
 # DO NOT MODIFY
 class Data(BaseModel):
-    age: int = Field(..., example=37)
-    workclass: str = Field(..., example="Private")
-    fnlgt: int = Field(..., example=178356)
-    education: str = Field(..., example="HS-grad")
-    education_num: int = Field(..., example=10, alias="education-num")
+    age: int = Field(..., example=37) # type: ignore
+    workclass: str = Field(..., example="Private") # type: ignore
+    fnlgt: int = Field(..., example=178356) # type: ignore
+    education: str = Field(..., example="HS-grad") # type: ignore
+    education_num: int = Field(..., example=10, alias="education-num") # type: ignore
     marital_status: str = Field(
         ..., example="Married-civ-spouse", alias="marital-status"
-    )
-    occupation: str = Field(..., example="Prof-specialty")
-    relationship: str = Field(..., example="Husband")
-    race: str = Field(..., example="White")
-    sex: str = Field(..., example="Male")
-    capital_gain: int = Field(..., example=0, alias="capital-gain")
-    capital_loss: int = Field(..., example=0, alias="capital-loss")
-    hours_per_week: int = Field(..., example=40, alias="hours-per-week")
-    native_country: str = Field(..., example="United-States", alias="native-country")
+    ) # type: ignore
+    occupation: str = Field(..., example="Prof-specialty") # type: ignore
+    relationship: str = Field(..., example="Husband") # type: ignore
+    race: str = Field(..., example="White") # type: ignore
+    sex: str = Field(..., example="Male") # type: ignore
+    capital_gain: int = Field(..., example=0, alias="capital-gain") # type: ignore
+    capital_loss: int = Field(..., example=0, alias="capital-loss") # type: ignore
+    hours_per_week: int = Field(..., example=40, alias="hours-per-week") # type: ignore
+    native_country: str = Field(..., example="United-States", alias="native-country") # type: ignore
 
-path = None # TODO: enter the path for the saved encoder 
-encoder = load_model(path)
+enc_path = os.path.join(os.getcwd(), "model", "encoder.pkl") 
+encoder = load_model(enc_path)
 
-path = None # TODO: enter the path for the saved model 
-model = load_model(path)
+ss_path = os.path.join(os.getcwd(), "model", "stdscaler.pkl") 
+encoder = load_model(ss_path)
+
+model_path = os.path.join(os.getcwd(), "model", "model.pkl")  
+model = load_model(model_path)
 
 # TODO: create a RESTful API using FastAPI
 app = None # your code here
